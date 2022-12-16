@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Card/Card";
 import "./FeaturedProducts.scss";
 
 export default function FeaturedProducts({ type }) {
@@ -46,7 +47,11 @@ export default function FeaturedProducts({ type }) {
           expedita temporibus ullam?
         </p>
       </div>
-      <div className="bottom"></div>
+      <div className="bottom">
+        {data.map((item) => (
+          <Card item={item} key={item.id} />
+        ))}
+      </div>
     </div>
   );
 }
